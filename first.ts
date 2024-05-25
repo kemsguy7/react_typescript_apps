@@ -45,3 +45,9 @@ creds = {
   password: 'abc',
   email: 'matt@gmail.com',
 }
+
+class AuthCredentials implements Credentials {
+  email: string
+  password: string
+  userName: string
+}
