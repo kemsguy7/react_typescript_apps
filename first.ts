@@ -74,8 +74,17 @@ admin = {
   userName: 'matt',
 }
 
+type Role = 'admin' | 'user' | 'editor'
+
+let role: Role
+
 // Meriging Types
-let role: 'admin' | 'user' | 'editor' // 'admin', 'user', 'editor'
 role = 'admin'
 role = 'user'
 role = 'editor'
+
+// Adding type guards
+function performAction(action: string | number, role: Role) {
+  if (role == 'admin' && typeof action === 'string') {
+  }
+}
