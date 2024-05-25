@@ -45,3 +45,31 @@ creds = {
   password: 'abc',
   email: 'matt@gmail.com',
 }
+
+class AuthCrendentials implements Credentials {
+  email: string
+  password: string
+  userName: string
+}
+
+function login(credentials: Credentials) {}
+
+login(new AuthCrendentials())
+
+// Being specific with Literal types
+interface Admin {
+  permissions: string[]
+}
+
+interface AppUser {
+  userName: string
+}
+
+interface AppAdmin extends Admin, AppUser {}
+
+let admin: AppAdmin
+
+admin = {
+  permissions: ['login'],
+  userName: 'matt',
+}
