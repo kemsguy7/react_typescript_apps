@@ -73,3 +73,9 @@ admin = {
   permissions: ['login'],
   userName: 'matt',
 }
+
+// Meriging Types
+let role: 'admin' | 'user' | 'editor' // 'admin', 'user', 'editor'
+role = 'admin'
+role = 'user'
+role = 'editor'
