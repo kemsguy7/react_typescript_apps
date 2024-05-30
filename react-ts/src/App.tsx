@@ -1,10 +1,16 @@
 import { useState } from 'react'
-import Goal from './components/Goal'
 
 import './App.css'
+import Goal from './components/Goal'
 
 export default function App() {
-  const [count, setCount] = useState(0)
-
-  return <h1>Let's get started </h1>
+  return (
+    <main>
+      <Goal title="React + TS">
+        <p>
+          <em> Learn it from the ground up! </em>{' '}
+        </p>
+      </Goal>
+    </main>
+  )
 }
