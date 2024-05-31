@@ -12,7 +12,7 @@ type Goal = {
 
 export default function App() {
 
-    const [goals, setGoals] = useState<>([]);
+    const [goals, setGoals] = useState<Goal[]>([]);
 
     function handleAddGoal() {
       console.log('Add Goal')
