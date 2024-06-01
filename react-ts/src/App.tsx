@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Goal from './components/Goal'
 import Header from './components/Header'
 import goalsImg from './assets/goals.jpeg'
+import GoalList from './components/GoalList'
 
 type Goal = {
   title: string
@@ -29,17 +30,8 @@ export default function App() {
         <h1> My Course Goals</h1>
       </Header>
       <button onClick={handleAddGoal}>Add Goal </button>
-      <ul>
-        {goals.map((goal) => (
-          <li key={goal.id}>
-            <Goal title="React + TS">
-              <p>
-                <em> Learn it from the ground up! </em>
-              </p>
-            </Goal>
-          </li>
-        ))}
-      </ul>
+      <GoalList goals={goals} />{' '}
+      {/* goals in curly braces signify the state while goals outside is the props gotten from GoalList component */}
     </main>
   )
 }
