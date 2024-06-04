@@ -23,7 +23,6 @@ export default function App() {
       return [...prevGoals, newGoal]
     })
   }
-
   return (
     <main>
       <Header image={{ src: goalsImg, alt: 'A list of goals' }}>
