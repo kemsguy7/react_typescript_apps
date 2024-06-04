@@ -18,7 +18,6 @@ export default function App() {
       console.log('Add Goal')
     }
 
-
   return (
 
     <main>
