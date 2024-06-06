@@ -29,14 +29,14 @@ type GoalProps = PropsWithChildren<{
   onDeleteGoal: (id: number) => void
 }> //generic type
 
-export default function Goal({ title, children, onDeleteG }: GoalProps) {
+export default function Goal({ title, children, onDeleteGoal }: GoalProps) {
   return (
     <article>
       <div>
         <h2> {title} </h2>
         <p> {children} </p>
       </div>
-      <button onClick={onDelete}>Delete</button>
+      <button onClick={onDeleteGoal}>Delete</button>
     </article>
   )
 }

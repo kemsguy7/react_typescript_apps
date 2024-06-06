@@ -20,7 +20,7 @@ export default function App() {
         title: 'Learn React + TS',
         description: 'Learn it in depth',
       }
-      return [...prevGoals, newGoal]
+      return [...prevGoals, newGoal] //return an updated array of goals
     })
   }
 
