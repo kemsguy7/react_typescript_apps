@@ -24,16 +24,19 @@ import { type FC, type PropsWithChildren, ReactNode } from 'react'
 
 // Alternative approach to the codes above above using a generic typescript function
 // propsWithCHildren is an inbuilt generic type that takes a type argument, it also allows props have children
-type GoalProps = PropsWithChildren<{ title: string }> //generic type
+type GoalProps = PropsWithChildren<{
+  title: string
+  onDeleteGoal: (id: number) => void
+}> //generic type
 
-export default function Goal({ title, children }: GoalProps) {
+export default function Goal({ title, children, onDeleteG }: GoalProps) {
   return (
     <article>
       <div>
         <h2> {title} </h2>
         <p> {children} </p>
       </div>
-      <button>Delete</button>
+      <button onClick={onDelete}>Delete</button>
     </article>
   )
 }
