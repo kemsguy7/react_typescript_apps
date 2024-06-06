@@ -18,7 +18,7 @@ export default function App() {
       const newGoal: Goal = {
         id: Math.random(),
         title: 'Learn React + TS',
-        description: 'Learn it in depth!',
+        description: 'Learn it in depth',
       }
       return [...prevGoals, newGoal]
     })
