@@ -14,12 +14,12 @@ export type Goal = {
 export default function App() {
   const [goals, setGoals] = useState<Goal[]>([])
 
-  function handleAddGoal() {
+  function handleAddGoal(goal: string, summary: string) {
     setGoals((prevGoals) => {
       const newGoal: Goal = {
         id: Math.random(),
-        title: 'Learn React + TS',
-        description: 'Learn it in depth',
+        title: goal,
+        description: summary,
       }
       return [...prevGoals, newGoal] //return an updated array of goals
     })
@@ -35,7 +35,7 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: 'A list of goals' }}>
         <h1> My Course Goals</h1>
       </Header>
-      <NewGoal />
+      <NewGoal onAddGoal={handleAddGoal} />
       <GoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
       {/* goals in curly braces signify the state while goals outside is the props gotten from GoalList component */}
     </main>
