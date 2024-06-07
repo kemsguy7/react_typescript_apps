@@ -25,6 +25,7 @@ export default function App() {
   }
 
   function handleDeleteGoal(id: number) {
+    //this function deletes goals based on an id
     setGoals((prevGoals) => prevGoals.filter((goal) => goal.id !== id))
   }
 
@@ -34,7 +35,7 @@ export default function App() {
         <h1> My Course Goals</h1>
       </Header>
       <button onClick={handleAddGoal}>Add Goal </button>
-      <GoalList goals={goals} />
+      <GoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
       {/* goals in curly braces signify the state while goals outside is the props gotten from GoalList component */}
     </main>
   )

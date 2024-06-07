@@ -11,7 +11,7 @@ export default function GoalList({ goals, onDeleteGoal }: GoalListProps) {
     <ul>
       {goals.map((goal) => (
         <li key={goal.id}>
-          <Goal title={goal.title} onDelete={onDeleteGoal}>
+          <Goal id={goal.id} title={goal.title} onDelete={onDeleteGoal}>
             <p>{goal.description}</p>
           </Goal>
         </li>
