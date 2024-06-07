@@ -3,6 +3,7 @@ import Goal from './components/Goal'
 import Header from './components/Header'
 import goalsImg from './assets/goals.jpeg'
 import GoalList from './components/GoalList'
+import NewGoal from './components/NewGoal'
 
 export type Goal = {
   title: string
@@ -34,7 +35,7 @@ export default function App() {
       <Header image={{ src: goalsImg, alt: 'A list of goals' }}>
         <h1> My Course Goals</h1>
       </Header>
-      <button onClick={handleAddGoal}>Add Goal </button>
+      <NewGoal />
       <GoalList goals={goals} onDeleteGoal={handleDeleteGoal} />
       {/* goals in curly braces signify the state while goals outside is the props gotten from GoalList component */}
     </main>
