@@ -12,7 +12,7 @@ export default function GoalList({ goals, onDeleteGoal }: GoalListProps) {
   //check if goal is empty
   if (goals.length === 0) {
     return (
-      <InfoBox mode="hint">
+      <InfoBox mode="hint" s>
         You have no course goals yet. Start adding some!{' '}
       </InfoBox>
     )
