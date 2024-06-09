@@ -22,7 +22,7 @@ export default function GoalList({ goals, onDeleteGoal }: GoalListProps) {
 
   if (goals.length >= 4) {
     warningBox = (
-      <InfoBox mode="warning">
+      <InfoBox mode="warning" severity="high">
         You're collecting a lot of goals. Don't put too much on your plate!
       </InfoBox>
     )
@@ -30,6 +30,7 @@ export default function GoalList({ goals, onDeleteGoal }: GoalListProps) {
 
   return (
     <>
+      {warningBox}
       <ul>
         {goals.map((goal) => (
           <li key={goal.id}>
