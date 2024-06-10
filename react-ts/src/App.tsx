@@ -43,12 +43,22 @@
 // }
 
 import Input from './components/input'
+import Button from './components/Button'
 
 function App() {
   return (
     <main>
-      <Input label="Your Name" id="name" type="text" />
-      <Input label="Age" id="age" type="number" />
+      {/* <Input label="Your Name" id="name" type="text" />
+      <Input label="Age" id="age" type="number" /> */}
+
+      <p>
+        <Button el="button"> A Button </Button>
+      </p>
+      <p>
+        <Button el="anchor" href="https://www.google.com">
+          A Link
+        </Button>
+      </p>
     </main>
   )
 }

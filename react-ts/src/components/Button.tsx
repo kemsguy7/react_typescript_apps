@@ -1,7 +1,7 @@
 import { type ComponentPropsWithoutRef } from 'react'
 
 type ButtonProps = {
-  el: 'button '
+  el: 'button'
 } & ComponentPropsWithoutRef<'button'>
 
 type AnchorProps = {
@@ -9,9 +9,15 @@ type AnchorProps = {
 } & ComponentPropsWithoutRef<'a'>
 
 export default function Button(props: ButtonProps | AnchorProps) {
-  const { el, ...otherProps } = props //rest is a variable that holds the remaining props
+  //const { el, ...otherProps } = props //rest is a variable that holds the remaining props
 
-  return <a> </a>
+  if (props.el === 'anchor') {
+    return (
+      <a className="button" {...props}>
+        {' '}
+      </a>
+    )
+  }
 
-  return <button> </button>
+  return <button className="button" {...props}></button>
 }
