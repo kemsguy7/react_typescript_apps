@@ -47,8 +47,8 @@ import Input from './components/input'
 function App() {
   return (
     <main>
-      <Input label="Name" id="name" />
-      <Input label="Age" id="age" />
+      <Input label="Your Name" id="name" type="text" />
+      <Input label="Age" id="age" type="number" />
     </main>
   )
 }
