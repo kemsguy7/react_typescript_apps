@@ -1,5 +1,5 @@
 import { type ReactNode } from 'react'
-import Goal from './Goal'
+
 import { Goal as CGoal } from '../App'
 import InfoBox from './InfoBox'
 

@@ -42,7 +42,7 @@
 //   )
 // }
 
-import Input from './components/input'
+//import Input from './components/input'
 import Button from './components/Button'
 
 function App() {
@@ -52,12 +52,10 @@ function App() {
       <Input label="Age" id="age" type="number" /> */}
 
       <p>
-        <Button el="button"> A Button </Button>
+        <Button> A Button </Button>
       </p>
       <p>
-        <Button el="anchor" href="https://www.google.com">
-          A Link
-        </Button>
+        <Button href="https://www.google.com">A Link</Button>
       </p>
     </main>
   )
