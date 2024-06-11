@@ -44,6 +44,7 @@
 
 //import Input from './components/input'
 import Button from './components/Button'
+import Container from './components/Container'
 
 function App() {
   return (
@@ -51,12 +52,14 @@ function App() {
       {/* <Input label="Your Name" id="name" type="text" />
       <Input label="Age" id="age" type="number" /> */}
 
-      <p>
+      {/* <p>
         <Button> A Button </Button>
       </p>
       <p>
         <Button href="https://www.google.com">A Link</Button>
-      </p>
+      </p> */}
+
+      <Container as={Button}> Click Me</Container>
     </main>
   )
 }
