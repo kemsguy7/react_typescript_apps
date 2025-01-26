@@ -2,7 +2,6 @@ import { User } from './api/authenticate';
 import { authenticate } from './api/authenticate';
 import { authorize } from './api/authorize';
 import { useAppContext } from './AppContext';
-const { user, loading, dispatch } = useAppContext();
 
 type Props = {
   user: undefined | User;
@@ -10,7 +9,8 @@ type Props = {
   loading: boolean;
 };
 
-export function Header({ user, onSignInClick, loading }: Props) {
+export function Header() {
+  const { user, loading, dispatch } = useAppContext();
   async function handleSignInClick() {
     dispatch({ type: 'authenticate' });
     const authenticatedUser = await authenticate();
@@ -27,7 +27,6 @@ export function Header({ user, onSignInClick, loading }: Props) {
       });
     }
   }
-
 
   return (
     <header className='flex justify-between items-center border-b-2 border-gray-100 py-6'>
