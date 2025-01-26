@@ -2,7 +2,6 @@ import { createContext, useContext, useReducer, ReactNode, } from 'react';
 import { User } from './api/authenticate';
 
 
-
 type State = {
     user: undefined | User;
     permissions: undefined | string[];
@@ -48,3 +47,35 @@ type State = {
         return state;
     }
   }
+
+  //consists of state values and a dispatch function to dispatch actions
+  type AppContextType = State & {
+    dispatch: React.Dispatch<Action>,
+}
+
+//user the initialState variable and a dummy dispatch function as the default context value. 
+const AppContext = createContext<AppContextType>({
+    ...initialState,
+    dispatch: () => {},
+})
+
+// implement the provider wrapper as follows; 
+type Props = {
+    children: ReactNode; 
+};
+
+//create the App provider
+export function AppProvider({ children } : Props) {
+    const [{ user, permissions, loading }, dispatch] = useReducer(reducer, initialState);
+    return (
+        <AppContext.Provider value={{ user, permissions, loading, dispatch }}>
+            {children} 
+        </AppContext.Provider>
+    )
+}
+
+// create a wrapper hook to access the context value
+export const useAppContext = () => useContext(AppContext); 
+
+
+
