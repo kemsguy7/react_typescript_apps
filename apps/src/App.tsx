@@ -6,8 +6,8 @@ function App() {
 
   return (
     <div className='App'> 
-      <Alert>
-        
+      <Alert type="Information" heading="Success">
+        Everything is really good!
       </Alert>
     </div>
   );
