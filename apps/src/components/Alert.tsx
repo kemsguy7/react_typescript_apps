@@ -1,8 +1,10 @@
+import { useState } from "react";
 interface AlertProps { 
     type: "warning" | "Information";
     heading?: string;
     children: React.ReactNode;
-
+    closable: boolean;
+    onClose?: () => void;
 }
 
 
@@ -21,7 +23,18 @@ interface AlertProps {
 // }
 
 
-export function Alert({ type , heading, children}: AlertProps) {
+export function Alert({ type , heading, children, closable, onClose}: AlertProps) {
+    const [visible, setVisible] = useState(true);
+    if (!visible) return null;
+
+    function handleCloseClick() { 
+        setVisible(false);
+        console.log("Close button clicked");
+        if (onClose) {
+            onClose();
+        }
+    }
+
     return(
         <div>
             <div>
@@ -30,6 +43,11 @@ export function Alert({ type , heading, children}: AlertProps) {
                 </span>
                 <span>{heading}</span>
             </div>
+            {closable && (
+            <button aria-label="Close" onClick ={handleCloseClick}> 
+                <span role="img" aria-label="Close"> X</span>
+            </button>
+            )}
             <div>{children}</div>
         </div>
     )
