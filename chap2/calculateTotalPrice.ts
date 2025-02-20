@@ -70,3 +70,25 @@ function foreverTask(taskName : string) : never {
         break;  //his line in invalid, never type can't have a reachable end point
     }
 }
+
+
+
+//ARRAYS 
+const numbers: number[] = []
+
+numbers.push(2);
+numbers.push("three");
+
+console.log(numbers)
+
+
+// CREATING TYPESCRIPT TYPES
+
+
+//USING OBJECT TYPES
+const table : { name: string, unitPrice? : number } = { //setting unitPrice as optional
+    name : "Table", 
+}; 
+
+
+// Type Aliases
