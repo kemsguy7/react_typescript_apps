@@ -9,7 +9,6 @@ function calculateTotalPrice(
 }
 
 
-
 function getTotal(
     unitPrice : number,
     quantity: number, 
@@ -77,7 +76,7 @@ function foreverTask(taskName : string) : never {
 const numbers: number[] = []
 
 numbers.push(2);
-numbers.push("three");
+//numbers.push("three");
 
 console.log(numbers)
 
@@ -91,4 +90,29 @@ const table : { name: string, unitPrice? : number } = { //setting unitPrice as o
 }; 
 
 
+
 // Type Aliases
+
+//syntax :type yourTypeAliasName = AnExistingType; 
+
+type Product = { name : string; unitPrice?: number };
+
+let table2 : Product =  { name : "Table" }
+let chair : Product = { name : "Chain", unitPrice : 40 }; 
+
+console.log(chair); 
+console.log(table2); 
+
+
+// An Alias can extend another tyoe suing the  & operator
+
+type DiscountedProduct = Product & { discount : number };
+
+
+let chairOnsale : DiscountedProduct = {
+    name: "Chair on Sale", 
+    unitPrice: 30, 
+    discount : 5, 
+}
+
+console.log(chairOnsale); 
