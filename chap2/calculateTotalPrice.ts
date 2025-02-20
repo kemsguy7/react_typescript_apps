@@ -58,3 +58,15 @@ function isCharacter(
 }
   
 //
+function logText(text : string)  {
+    console.log(text);
+}
+
+
+// never type
+function foreverTask(taskName : string) : never {
+    while (true) {
+        console.log (`Doing ${taskName} over and over again...`);
+        break;  //his line in invalid, never type can't have a reachable end point
+    }
+}
