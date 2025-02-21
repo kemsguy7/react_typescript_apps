@@ -116,3 +116,17 @@ let chairOnsale : DiscountedProduct = {
 }
 
 console.log(chairOnsale); 
+
+
+//function types
+type Purchase = (quantity : number) => void;
+type ProductType = {
+    name : string; 
+    unitPrice? : number; 
+    purchase : Purchase; 
+}
+
+let product : ProductType = {
+    name : "Matthew Idungafa",
+    purchase : (quantity) => console.log(`Purchased ${quantity} tables`),
+}
