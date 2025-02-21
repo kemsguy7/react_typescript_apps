@@ -148,4 +148,30 @@ class Product2 {
         this.name = name; 
         this.unitPrice = unitPrice; 
     }
+
+    //methods and params returns values can also be typed like examples above
+    getDiscountedPrice(discount: number) : number {
+        return this.unitPrice - discount; 
+    }
 }
+
+const tableClass  = new Product2("Table", 500); 
+console.log(tableClass); 
+console.log(tableClass.getDiscountedPrice(100)); 
+
+
+enum Level {
+    Low, 
+    Medium, 
+    High = 1, // Custom values cna be defined for enums 
+    stringVal = "string", // Enums can also have string values
+}
+
+let level = Level.Low;
+console.log(level); 
+level = Level.High;
+console.log(level);
+console.log(Level.stringVal);   
+
+
+//
