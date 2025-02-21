@@ -135,3 +135,17 @@ interface DiscountedProductType extends ProductType {
     discount : number; 
 }
 
+class Product1 {
+    name: string;
+    unitPrice?: number; 
+}
+
+// Adding types to class properties using contructor
+class Product2 { 
+    
+    unitPrice;
+    constructor(public name: string, unitPrice: number ) { //properties don't need to be defined if the contructor parameters are marked as public as seen in the name property
+        this.name = name; 
+        this.unitPrice = unitPrice; 
+    }
+}
