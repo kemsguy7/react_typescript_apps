@@ -95,7 +95,7 @@ const table : { name: string, unitPrice? : number } = { //setting unitPrice as o
 
 //syntax :type yourTypeAliasName = AnExistingType; 
 
-type Product = { name : string; unitPrice?: number };
+interface Product { name : string; unitPrice?: number };
 
 let table2 : Product =  { name : "Table" }
 let chair : Product = { name : "Chain", unitPrice : 40 }; 
@@ -120,7 +120,7 @@ console.log(chairOnsale);
 
 //function types
 type Purchase = (quantity : number) => void;
-type ProductType = {
+interface ProductType  {  //changed from type to interface
     name : string; 
     unitPrice? : number; 
     purchase : Purchase; 
@@ -130,3 +130,8 @@ let product : ProductType = {
     name : "Matthew Idungafa",
     purchase : (quantity) => console.log(`Purchased ${quantity} tables`),
 }
+
+interface DiscountedProductType extends ProductType { 
+    discount : number; 
+}
+
