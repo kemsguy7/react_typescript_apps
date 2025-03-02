@@ -174,4 +174,6 @@ console.log(level);
 console.log(Level.stringVal);   
 
 
-//
+//union types
+type LevelU = "H" | "M" | "L";
+
