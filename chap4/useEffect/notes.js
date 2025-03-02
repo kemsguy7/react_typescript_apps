@@ -30,3 +30,45 @@ export function AnotherComponent() {
   }
   return <button onClick={handleClick}> Cause Effect </button>;
 }
+
+//use Effect with conditionals
+export function YetAnotherComponent() {
+  useEffect(() => {
+    if (someProp) {
+      console.log('Some Effect');
+    }
+  });
+  if (!someProp) {
+    return null;
+  }
+  return;
+}
+
+//Effect Cleanup
+
+
+function ExampleComponent({ onClickAnywhere }) {
+    useEffect(() => {
+    function handleClick() {
+    onClickAnywhere();
+    }
+    document.addEventListener("click", listener);
+    return function cleanup() {
+    document.removeEventListener("click", listener);
+    };
+    });
+    return ...;
+   }
+
+   /*
+    Above  The event handler
+is never detatched though, so multiple event handlers will become attached to the document element
+as the effect is rerun. */
+
+
+// SOLUTION
+function CleanupComponent({ onClickAnywhere }) {
+    useEffect(() => {
+        
+    })
+}
