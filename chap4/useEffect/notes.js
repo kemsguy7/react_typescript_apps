@@ -49,14 +49,20 @@ export function YetAnotherComponent() {
 
 function ExampleComponent({ onClickAnywhere }) {
     useEffect(() => {
-    function handleClick() {
-    onClickAnywhere();
-    }
-    document.addEventListener("click", listener);
-    return function cleanup() {
-    document.removeEventListener("click", listener);
-    };
-    });
+      function handleClick() {
+        onClickAnywhere();
+      }
+      document.addEventListener("click", listener);
+      return function cleanup() { // Cleanup function to cleaup this effect
+        document.removeEventListener("click", listener);
+      };
+
+
+      // often , an anonymous function is used as the cleanup function
+      return () => {
+        document.removeEventListener("click", listener);
+      }
+     });
     return ...;
    }
 
@@ -72,3 +78,4 @@ function CleanupComponent({ onClickAnywhere }) {
         
     })
 }
+
