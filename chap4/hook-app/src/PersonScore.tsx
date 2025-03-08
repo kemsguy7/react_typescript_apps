@@ -16,9 +16,9 @@ export function PersonScore() {
 
   useEffect(() => {
     getPerson().then((person) => {
-      //
       setLoading(false);
       setName(person.name);
+      // console.log('State Values', loading, name);
     });
   }, []);
 
