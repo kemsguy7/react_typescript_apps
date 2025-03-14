@@ -32,7 +32,7 @@
 //   }
 // }
 
-// export function PersonScore() {
+// export function PersonScoreWithReducer() {
 //   // const [name, setName] = useState<string | undefined>();
 //   // const [score, setScore] = useState(0);
 //   // const [loading, setLoading] = useState(true);
@@ -49,15 +49,8 @@
 //   // }, []); // first effect using promise
 
 //   useEffect(() => {
-//     getPerson().then((person) => console.log(person));
-//   }, []);
-
-//   useEffect(() => {
-//     getPerson().then((person) => {
-//       setLoading(false);
-//       setName(person.name);
-//       // console.log('State Values', loading, name);
-//     });
+//     getPerson().then(({ name }) => dispatch({ type: 'initialize', name }));
+//     console.log(name + ' is the name');
 //   }, []);
 
 //   //  display a loading indicator while the loading state is set to true
@@ -71,9 +64,10 @@
 //         {' '}
 //         {name}, {score}
 //       </h3>
-//       <button onClick={() => setScore(score + 1)}>Add</button>
-//       <button onClick={() => setScore(score - 1)}>Subtract</button>
-//       <button onClick={() => setScore(0)}> Reset </button>
+
+//       <button onClick={() => dispatch({ type: 'increment' })}> Add </button>
+//       <button onClick={() => dispatch({ type: 'decrement' })}> Subtract </button>
+//       <button onClick={() => dispatch({ type: 'reset' })}> Reset </button>
 //     </div>
 //   );
 
